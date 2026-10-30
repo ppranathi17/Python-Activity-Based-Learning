@@ -1,15 +1,19 @@
-scores = [80, 70, 60, 50, 40, 30]
-group1 = []
-group2 = []
 
-for i in range(len(scores)):
-    if sum(group1) <= sum(group2):
-        group1.append(scores[i])
+n = int(input("Enter number of readings: "))
+total = 0
+
+if n <= 0:
+    print("Invalid input")
+else:
+    for i in range(n):
+        temp = float(input("Enter temperature: "))
+        total = total + temp
+
+    average = total / n
+
+    print("Average Temperature:", average)
+
+    if average > 35:
+        print("High Temperature")
     else:
-        group2.append(scores[i])
-
-print("Group 1:", group1)
-print("Group 2:", group2)
-
-print("Group 1 Total:", sum(group1))
-print("Group 2 Total:", sum(group2))
+        print("Normal Temperature")
