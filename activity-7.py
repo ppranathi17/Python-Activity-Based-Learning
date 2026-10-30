@@ -1,20 +1,22 @@
 
-electricity = int(input("Enter electricity units: "))
-water = int(input("Enter water units: "))
 
-if electricity < 0 or water < 0:
+students = int(input("Enter number of students: "))
+fee = int(input("Enter registration fee per student: "))
+sponsorship = int(input("Enter sponsorship amount: "))
+expenses = int(input("Enter total expenses: "))
+
+if students < 0 or fee < 0 or sponsorship < 0 or expenses < 0:
     print("Invalid input")
 else:
-    e_bill = electricity * 5
-    w_bill = water * 2
+    registration = students * fee
+    total = registration + sponsorship
+    balance = total - expenses
 
-    total = e_bill + w_bill
+    print("Registration Amount:", registration)
+    print("Total Funds:", total)
+    print("Final Balance:", balance)
 
-    print("Electricity Bill:", e_bill)
-    print("Water Bill:", w_bill)
-    print("Total Bill:", total)
-
-    if electricity > 200:
-        print("High Electricity Usage")
+    if balance >= 0:
+        print("Festival is in Profit")
     else:
-        print("Normal Electricity Usage")
+        print("Festival is in Loss")
