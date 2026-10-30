@@ -1,19 +1,15 @@
-registrations = [
-    ("Ram", "Python"),
-    ("Sam", "Java"),
-    ("Ram", "Python"),
-    ("Ravi", "Python")
-]
 
-print("Duplicate Registrations:")
+electricity = int(input("Enter electricity units: "))
+water = int(input("Enter water units: "))
 
-for i in range(len(registrations)):
-    for j in range(i + 1, len(registrations)):
-        if registrations[i] == registrations[j]:
-            print(registrations[i])
+if electricity < 0 or water < 0:
+    print("Invalid input")
+else:
+    total = electricity + water
 
-print("Invalid Registrations:")
+    print("Total Consumption:", total)
 
-for student, course in registrations:
-    if course not in ("Python", "Java"):
-        print(student, course)
+    if electricity > 500:
+        print("High Electricity Consumption")
+    else:
+        print("Normal Electricity Consumption")
