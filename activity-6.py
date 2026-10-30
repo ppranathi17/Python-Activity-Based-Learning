@@ -1,12 +1,21 @@
 
-marks1 = int(input("Enter first exam marks: "))
-marks2 = int(input("Enter second exam marks: "))
+electricity = int(input("Enter electricity units: "))
+water = int(input("Enter water units: "))
 
-if marks1 < 0 or marks1 > 100 or marks2 < 0 or marks2 > 100:
-    print("Invalid marks")
-elif marks2 > marks1:
-    print("Performance Improved")
-elif marks2 < marks1:
-    print("Performance Declined")
+if electricity < 0 or water < 0:
+    print("Invalid input")
 else:
-    print("No Change")
+    e_bill = electricity * 5
+    w_bill = water * 2
+
+    total = e_bill + w_bill
+
+    print("Electricity Bill:", e_bill)
+    print("Water Bill:", w_bill)
+    print("Total Bill:", total)
+
+    if electricity > 200:
+        print("High Electricity Usage")
+    else:
+        print("Normal Electricity Usage")
+
