@@ -1,13 +1,20 @@
-teams = ["Team A", "Team B", "Team C"]
-points = [6, 3, 6]
 
-for i in range(3):
-    for j in range(i + 1, 3):
-        if points[i] < points[j]:
-            points[i], points[j] = points[j], points[i]
-            teams[i], teams[j] = teams[j], teams[i]
+electricity = int(input("Enter electricity units: "))
+water = int(input("Enter water units: "))
 
-print("Tournament Rankings")
+if electricity < 0 or water < 0:
+    print("Invalid input")
+else:
+    e_bill = electricity * 5
+    w_bill = water * 2
 
-for i in range(3):
-    print(i + 1, teams[i], points[i], "points")
+    total = e_bill + w_bill
+
+    print("Electricity Bill:", e_bill)
+    print("Water Bill:", w_bill)
+    print("Total Bill:", total)
+
+    if electricity > 200:
+        print("High Electricity Usage")
+    else:
+        print("Normal Electricity Usage")
