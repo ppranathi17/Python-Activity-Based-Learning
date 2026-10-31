@@ -1,11 +1,23 @@
 
-balance = int(input("Enter balance: "))
-amount = int(input("Enter withdrawal amount: "))
 
-if amount <= 0:
-    print("Invalid amount")
-elif amount > balance:
-    print("Insufficient balance")
+key = input("Enter correct answers: ")
+answers = input("Enter student answers: ")
+
+if len(key) != len(answers):
+    print("Invalid answers")
 else:
-    balance = balance - amount
-    print("Remaining balance:", balance)
+    score = 0
+
+    for i in range(len(key)):
+        if key[i] == answers[i]:
+            score = score + 1
+
+    print("Total Questions:", len(key))
+    print("Correct Answers:", score)
+    print("Wrong Answers:", len(key) - score)
+
+    if score >= len(key) / 2:
+        print("Good Performance")
+    else:
+        print("Needs Improvement")
+
